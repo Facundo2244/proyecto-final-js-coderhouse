@@ -8,7 +8,7 @@ const barraProgresoLlena = document.querySelector('#barraProgresoLlena');
 
 let preguntaActual = {}
 let respuestaCorrecta = true
-let punataje = 0
+let puntaje = 0
 let contPreguntas = 0
 let pregDisponibles = []
 
@@ -63,8 +63,8 @@ iniciarJuego = () => {
 }
 
 nuevaPregunta = () => {
-    if(pregDisponibles.length === 0 || contPreguntas > puntajeSuma) {
-        localStorage.setItem('mostRecentScore', score)
+    if(pregDisponibles.length === 0 || contPreguntas > totalPreguntas) {
+        localStorage.setItem('mostRecentScore', puntaje)
 
         return window.location.assign('../pages/pantalla-final.html')
     }
