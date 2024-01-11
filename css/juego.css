@@ -67,8 +67,12 @@ body {
     width: 0%;
 }
 
-@media screen and (max-width: 768px) {
-    .choice-container {
-        min-width: 20rem;
-    }
+#pregunta{
+    color: rgb(239,184,16);
+}
+.textoInfo{
+    color: rgb(239,184,16);
+}
+.textoPuntaje{
+    color: rgb(239,184,16);
 }

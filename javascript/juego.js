@@ -5,6 +5,8 @@ const opciones = Array.from(document.querySelectorAll('.opcionTexto'));
 const textoProgreso = document.querySelector('#textoProgreso');
 const textoPuntaje= document.querySelector('#puntaje');
 const barraProgresoLlena = document.querySelector('#barraProgresoLlena');
+const puntajeSuma = 100
+const totalPreguntas = 10
 
 let preguntaActual = {}
 let respuestaCorrecta = true
@@ -99,18 +101,18 @@ let preguntas = [
 
 ]
 
-const puntajeSuma = 100
-const totalPreguntas = 10
-
 //funciones
 
+
+// cada vezque se inicia el juego se reincian los contadores y se llama a la funcion nuevapregunta
 iniciarJuego = () => {
     contPreguntas = 0
-    punataje = 0
+    puntaje = 0
     pregDisponibles = [...preguntas]
     nuevaPregunta()
 }
 
+//llama a una nueva pregunta mientras que las preguntas disponibles no sean 0 o el total de preguntas sea menor a la cantidad de preguntas hechas.
 nuevaPregunta = () => {
     if(pregDisponibles.length === 0 || contPreguntas > totalPreguntas) {
         localStorage.setItem('ultimoPuntaje', puntaje)
@@ -135,8 +137,8 @@ nuevaPregunta = () => {
 
     respuestaCorrecta = true
 }
-
-opciones.forEach(opcion => {
+//funcion para actualizar las opciones y asignar una clase (color rojo o verde) según corresponda ante una respuesta correcta o incorrecta.
+opciones.forEach(opcion => { 
     opcion.addEventListener('click', e => {
         if(!respuestaCorrecta) return
 
@@ -147,11 +149,11 @@ opciones.forEach(opcion => {
         let claseCorresponde = respuestaSelec == preguntaActual.respuesta ? 'correcta' : 'incorrecta'
 
         if(claseCorresponde === 'correcta') {
-            incrementScore(puntajeSuma)
+            sumarPuntaje(puntajeSuma)
         }
 
         opcionSelec.parentElement.classList.add(claseCorresponde)
-
+//setTimeout utilizado para que una vez clickeada la opción, el juego pase de pregunta.
         setTimeout(() => {
             opcionSelec.parentElement.classList.remove(claseCorresponde)
             nuevaPregunta()
@@ -160,7 +162,7 @@ opciones.forEach(opcion => {
     })
 })
 
-incrementScore = num => {
+sumarPuntaje = num => {
     puntaje +=num
     textoPuntaje.innerText = puntaje
 }
