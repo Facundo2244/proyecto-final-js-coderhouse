@@ -90,7 +90,7 @@ let preguntas = [
     },
     {
         pregunta: "¿En qué país se inició la primera Revolución Industrial?",
-        opcion1: "Reino Unidos",
+        opcion1: "Reino Unido",
         opcion2: "Estados Unidos",
         opcion3: "Francia",
         opcion4: "Alemania",

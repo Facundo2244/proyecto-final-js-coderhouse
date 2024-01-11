@@ -17,8 +17,8 @@
 }
 
 h1 {
-    font-size: 3.2rem;
-    margin-bottom: 5rem;
+    font-size: 1.8rem;
+    margin-bottom: 2.5rem;
     color: white;
 
 }
@@ -31,7 +31,7 @@ h1 {
     align-items: center;
     max-width: 80rem;
     margin: 0 auto;
-    padding: 2rem;
+    padding: 8rem;
 }
 
 .flex-column {
@@ -57,15 +57,15 @@ h1 {
 }
 /* estilo botones */
 .botones {
-    font-size: 2rem;
-    padding: 2rem 0;
-    width: 20rem;
+    font-size: 1rem;
+    padding: 1rem 0;
+    width: 10rem;
     text-align: center;
-    margin-bottom: 1rem;
+    margin-bottom: 0.5rem;
     text-decoration: none;
     color: rgb(28, 26, 26);
     background: linear-gradient(90deg, rgb(18, 255, 109) 0%, rgb(0, 102, 255) 100%);
-    border-radius: 4px;
+    border-radius: 2px;
 }
 
 .botones:hover {
@@ -97,14 +97,14 @@ h1 {
     display: flex;
     flex-direction: column;
     align-items: center;
-    max-width: 30rem;
+    max-width: 15rem;
 }
 
 input {
-    margin-bottom: 1rem;
-    width: 20rem;
-    padding: 1.5rem;
-    font-size: 1.8rem;
+    margin-bottom: 0.5rem;
+    width: 10rem;
+    padding: 0.8rem;
+    font-size: 1rem;
     border: none;
     box-shadow: 0 0.1rem 1.4rem 0 rgba(86, 185, 235, 0.5);
 }
@@ -114,15 +114,16 @@ input::placeholder {
 }
 
 #nombreUsuario {
-    margin-bottom: 3rem;
+    margin-bottom: 2rem;
     width: 100%;
     outline: none;
 }
 
 #texto-formulario {
-    font-size: 2.4rem;
+    font-size: 1.2rem;
     color: #fff;
     text-align: center;
+    margin: 1rem;
 }
 
 #botonGuardarPuntaje {
