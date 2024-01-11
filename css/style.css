@@ -1,9 +1,14 @@
 /* estilo general */
 
+@import url('https://fonts.googleapis.com/css2?family=MedievalSharp&display=swap');
+
+
+
 *{
     box-sizing: border-box;
     padding: 0;
     margin: 0;
+    font-family: 'MedievalSharp', cursive;
 }
 
 .menu-principal{
@@ -64,7 +69,8 @@ h1 {
     margin-bottom: 0.5rem;
     text-decoration: none;
     color: rgb(28, 26, 26);
-    background: linear-gradient(90deg, rgb(18, 255, 109) 0%, rgb(0, 102, 255) 100%);
+    background: rgb(232,218,189);
+    background: linear-gradient(90deg, rgba(232,218,189,1) 12%, rgba(134,122,96,1) 100%);
     border-radius: 2px;
 }
 
