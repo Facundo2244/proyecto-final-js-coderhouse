@@ -119,7 +119,7 @@ nuevaPregunta = () => {
     }
 
     contPreguntas++
-    textoProgreso.innerText = `Pregunta ${contPreguntas} of ${totalPreguntas}`
+    textoProgreso.innerText = `Pregunta ${contPreguntas} de ${totalPreguntas}`
     barraProgresoLlena.style.width = `${(contPreguntas/totalPreguntas) * 100}%`
     
     const pregIndice = Math.floor(Math.random() * pregDisponibles.length)
