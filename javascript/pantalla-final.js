@@ -34,7 +34,7 @@ guardarPuntaje = e => {
     puntajes.splice(10)
 
     localStorage.setItem('puntajes', JSON.stringify(puntajes))
-    window.location.assign('../index.html')
+    return window.location.assign('../index.html')
 
     
 }
