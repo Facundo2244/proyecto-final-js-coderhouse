@@ -115,7 +115,7 @@ nuevaPregunta = () => {
     if(pregDisponibles.length === 0 || contPreguntas > totalPreguntas) {
         localStorage.setItem('ultimoPuntaje', puntaje)
 
-        return window.location.assign('/pages/pantalla-final.html')
+        return window.location.assign('../pages/pantalla-final.html')
     }
 
     contPreguntas++
