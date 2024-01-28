@@ -1,40 +1,39 @@
 //creación de variables
 
-const nombreUsuario = document.querySelector('#nombreUsuario')
-const botonGuardarPuntaje = document.querySelector('#botonGuardarPuntaje')
-const puntajeFinal = document.querySelector('#puntajeFinal')
-const ultimoPuntaje = localStorage.getItem('ultimoPuntaje')
+
+const nombreUsuario = document.getElementById('nombreUsuario');
+const botonGuardarPuntaje = document.getElementById('botonGuardarPuntaje');
+const puntajeFinal = document.getElementById('puntajeFinal');
+const ultimoPuntaje = localStorage.getItem('ultimoPuntaje');
+
 
 //traigo el puntaje del storage
-const puntajes = JSON.parse(localStorage.getItem('puntajes')) || []
 
-const topPuntajes = 10
+const puntajes = JSON.parse(localStorage.getItem('puntajes')) || [];
+
+const topPuntajes = 5;
 
 //actualizo el puntaje del último jugador
-puntajeFinal.innerText = ultimoPuntaje
+
+puntajeFinal.innerText = ultimoPuntaje;
 
 //evento keyup para tomar el nombre que ingresa el usuario y luego guardarlo con la función guardarPuntaje
+
 nombreUsuario.addEventListener('keyup', () => {
-    botonGuardarPuntaje.disabled = !nombreUsuario.value
-})
-guardarPuntaje = e => {
-    e.preventDefault()
+    botonGuardarPuntaje.disabled = !nombreUsuario.value;
+});
+
+guardarPuntaje = (e) => {
+    e.preventDefault();
 
     const puntaje = {
         puntaje: ultimoPuntaje,
-        nombre: nombreUsuario.value
-    }
+        nombre: nombreUsuario.value,
+    };
+    puntajes.push(puntaje);
+    puntajes.sort((a, b) => b.puntaje - a.puntaje);
+    puntajes.splice(5);
 
-    puntajes.push(puntaje)
-
-    puntajes.sort((a,b) => {
-        return b.puntaje - a.puntaje
-    })
-
-    puntajes.splice(10)
-
-    localStorage.setItem('puntajes', JSON.stringify(puntajes))
-    window.location.assign('../pages/puntajes.html')
-
-    
-}
+    localStorage.setItem('puntajes', JSON.stringify(puntajes));
+    window.location.assign('/');
+};
