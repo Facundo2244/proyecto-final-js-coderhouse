@@ -70,6 +70,8 @@ nuevaPregunta = () => {
 opciones.forEach((opcion) => {
     opcion.addEventListener('click', (e) => {
         if (!respuestaCorrecta) return;
+        
+        
 
         respuestaCorrecta = false;
         const opcionSelec = e.target;
@@ -79,7 +81,28 @@ opciones.forEach((opcion) => {
             respuestaSelec == preguntaActual.respuesta ? 'correcta' : 'incorrecta';
 
         if (claseCorresponde === 'correcta') {
-            sumarPuntaje(puntajeSuma);
+            sumarPuntaje(puntajeSuma)
+//librería sweetAlert para indicar el resultado de la respuesta y brindar más información sobre ella al usuario.
+            Swal.fire({
+                title: "Respuesta Correcta!",
+                text: preguntaActual.info,
+                imageUrl: preguntaActual.imagen,
+                imageWidth: 400,
+                imageHeight: 200,
+                imageAlt: "Custom image"
+              });
+;
+            
+        }
+        else{
+            Swal.fire({
+                title: "Respuesta incorrecta!",
+                text: preguntaActual.info,
+                imageUrl: preguntaActual.imagen,
+                imageWidth: 400,
+                imageHeight: 200,
+                imageAlt: "Custom image"
+              });
         }
 
         opcionSelec.parentElement.classList.add(claseCorresponde);
